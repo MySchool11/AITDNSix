@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq.Expressions;
 using System.Collections.Generic;
 
 namespace AITDNSix
@@ -12,9 +11,9 @@ namespace AITDNSix
             // A property can define either a get and/ or a set accessor (known as getters and setters) --> See the NewCustomer() class below
             // fields cannot have validation performed upon them wheras a property can have validation built into it
 
-            Customer newCustomer = new Customer("John"); // The Customer() newCustomer is instantiated (created) with the field "John".
+            var newCustomer = new Customer("John"); // The Customer() newCustomer is instantiated (created) with the field "John".
             // How do we now recover that field? We cannot because it is held in a private variable accessible only from within the class.
-            NewCustomer Customer = new NewCustomer(); // Instantiate a new NewCustomer class called newCustomer
+            var Customer = new NewCustomer(); // Instantiate a new NewCustomer class called newCustomer
             Customer.Name = "John"; // set the field Name to "John";
             Console.WriteLine("Customer name is {0}", Customer.Name); // Uses the Name property getter to return the value held;
 
