@@ -1,0 +1,6 @@
+C:\Users\samue\Source\Repos\AITDNSix\AITDNSix\obj\Debug\AITDNSix.csprojResolveAssemblyReference.cache
+C:\Users\samue\Source\Repos\AITDNSix\AITDNSix\bin\Debug\AITDNSix.exe.config
+C:\Users\samue\Source\Repos\AITDNSix\AITDNSix\bin\Debug\AITDNSix.exe
+C:\Users\samue\Source\Repos\AITDNSix\AITDNSix\bin\Debug\AITDNSix.pdb
+C:\Users\samue\Source\Repos\AITDNSix\AITDNSix\obj\Debug\AITDNSix.exe
+C:\Users\samue\Source\Repos\AITDNSix\AITDNSix\obj\Debug\AITDNSix.pdb
