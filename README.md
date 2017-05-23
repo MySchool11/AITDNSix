@@ -1,2 +1,2 @@
 # AITDNSix
-Another c# lesson focusing of fields and properties.
+Another c# lesson focusing on fields and properties.
