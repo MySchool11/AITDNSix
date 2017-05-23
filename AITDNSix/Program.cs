@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AITDNSix
 {
@@ -19,13 +20,18 @@ namespace AITDNSix
             var customer = new NewCustomer(); // Instantiate a new NewCustomer class called newCustomer.
             customer.Name = "John"; // set the field Name to "John".
             Console.WriteLine("Customer name is {0}", customer.Name); // Uses the Name property getter to return the value held.
+            // If we try to pass "102253335" as the Name to the customer object (which uses a property to error handle), this happens -
+            Console.WriteLine("Try to make customer.Name = 102253335");
+            customer.Name = "102253335";
+            Console.WriteLine("Customer.Name is now: {0} - this is because the numbers passed were ignored, so nothing changed.", customer.Name);
             // You can use a technique called the object initialiser to simplify this process.
             var customerTwo = new NewCustomer()
             {
-                Name = "Peter"
+                Name = "Peter",
+                Age = 22 // each property needs a , between them
                 // Any other properties that need setting at declaration time
             };
-            Console.WriteLine("CustomerTwo name is {0}", customerTwo.Name); // Returns Peter from the getter of the property Name.
+            Console.WriteLine("CustomerTwo name is {0} and their age is {1}", customerTwo.Name, customerTwo.Age); // Returns Peter and 22 from the getters of the property Name.
 
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
@@ -54,19 +60,24 @@ namespace AITDNSix
 
         public class NewCustomer
         {
-            private string _name; // field
+            private string _name; // field --> to store information all properties need a field, as the property is just a collection of code and not a variable
 
             public string Name  // property
             {
                 get { return _name; } // getter --> returned when NewCustomer.Name is requested using string name = NewCustomer.Name
                 set
                 {
-                    if (!String.IsNullOrEmpty(value)) // setter (code validates that the passed variable is not null or empty and will only run if this is true, if not (!) null or empty (value passed).
+                    if (!String.IsNullOrEmpty(value) && !value.All(char.IsDigit)) // setter (code validates that the passed variable is not null or empty and will only run if this is true, if not (!) null or empty (value passed) or contains no numbers.
                     {
                         _name = value;  // value is a keyword used in properties to reflect the data passed into the property, in this case a string for the Name value --> runs when NewCustomer.Name = "{some value}" is declared.
                     }
                 }
+                // If the setter was removed then the property would become read only, as there would be no way to alter the properties value.
+                // Although you can expose fields (make them public), common practice (arguably good practice) is to expose properties and hide fields.
             }
+
+            // One last thing to know is that you can create a default property which will create a 'hidden' member (variable belonging to a class) without the need to declare it -
+            public int Age { get; set; } // That easy
         }
     }
 }
