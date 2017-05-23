@@ -7,19 +7,32 @@ namespace AITDNSix
     {
         private static void Main(string[] args)
         {
-            // A field is a variable of a class --> See the Customer() class below
-            // A property can define either a get and/ or a set accessor (known as getters and setters) --> See the NewCustomer() class below
-            // fields cannot have validation performed upon them wheras a property can have validation built into it
+            // A field is a variable of a class --> See the Customer() class below.
+            // A property can define either a get and/ or a set accessor (known as getters and setters) --> See the NewCustomer() class below.
+            // fields cannot have validation performed upon them wheras a property can have validation built into it.
 
             var newCustomer = new Customer("John"); // The Customer() newCustomer is instantiated (created) with the field "John".
             // How do we now recover that field? We cannot because it is held in a private variable accessible only from within the class.
-            var Customer = new NewCustomer(); // Instantiate a new NewCustomer class called newCustomer
-            Customer.Name = "John"; // set the field Name to "John";
-            Console.WriteLine("Customer name is {0}", Customer.Name); // Uses the Name property getter to return the value held;
+            var custName = "102253335"; // Here we have a variable called custName (which should hold the customers name) but for some reason holds the customers bank a/c no.
+            var oopsCustomer = new Customer(custName); // Now the oopsCustomer object has been created with a bank a/c number in place of the customers name because a field has no error checking performed on it.
+            // You could of course write another method to error check the input but this creates more complexity and makes debugging harder, so it is better to use a property and build the error checking into that.
+            var customer = new NewCustomer(); // Instantiate a new NewCustomer class called newCustomer.
+            customer.Name = "John"; // set the field Name to "John".
+            Console.WriteLine("Customer name is {0}", customer.Name); // Uses the Name property getter to return the value held.
+            // You can use a technique called the object initialiser to simplify this process.
+            var customerTwo = new NewCustomer()
+            {
+                Name = "Peter"
+                // Any other properties that need setting at declaration time
+            };
+            Console.WriteLine("CustomerTwo name is {0}", customerTwo.Name); // Returns Peter from the getter of the property Name.
 
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
         }
+
+        // For clarity sake in this lesson, the classes have been placed within the main class (Program). Were this production code they would be put into seperate class files named as the class so Customer.cs and NewCustomer.cs
+        // This is done for ease of reading and amending the code.
 
         public class Customer
         {
