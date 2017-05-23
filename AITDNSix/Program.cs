@@ -77,7 +77,7 @@ namespace AITDNSix
             }
 
             // One last thing to know is that you can create a default property which will create a 'hidden' member (variable belonging to a class) without the need to declare it -
-            public int Age { get; set; } // That easy
+            public int Age { get; set; } // That easy, but now there is no validation, so be careful in its use.
         }
     }
 }
