@@ -6,6 +6,18 @@ namespace AITDNSix
 {
     internal class Program
     {
+
+        /// <summary>
+        /// This program discusses fields and properties, their differnces and uses.
+        /// </summary>
+        /// <author>
+        /// Samuel Bancroft (c) 2017
+        /// </author>
+        /// <code>
+        /// Made up of one main file
+        /// Program.cs => the main file
+        /// </code>
+
         private static void Main(string[] args)
         {
             // A field is a variable of a class --> See the Customer() class below.
